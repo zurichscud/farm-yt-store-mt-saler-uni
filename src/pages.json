@@ -1,0 +1,197 @@
+{
+  "easycom": {
+    "autoscan": true,
+    "custom": {
+      // uni-ui 规则如下配置
+      "^uni-(.*)": "@dcloudio/uni-ui/lib/uni-$1/uni-$1.vue",
+      "^nut-(.*)?-(.*)": "nutui-uniapp/components/$1$2/$1$2.vue",
+      "^nut-(.*)": "nutui-uniapp/components/$1/$1.vue",
+      "^wd-(.*)": "wot-design-uni/components/wd-$1/wd-$1.vue"
+    }
+  },
+  "pages": [
+    //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
+    {
+      "path": "pages/index/index",
+      "style": {
+        "navigationStyle": "custom",
+        "navigationBarTitleText": "首页",
+        "navigationBarTextStyle": "white"
+      }
+    },
+    {
+      "path": "pages/index/mine",
+      "style": {
+        "navigationBarTitleText": "个人中心"
+      }
+    },
+    {
+      "path": "pages/index/order",
+      "style": {
+        "navigationBarTitleText": "订单"
+      }
+    },
+    {
+      "path": "pages/index/login",
+      "style": {
+        "navigationBarTitleText": "登录"
+      }
+    },
+    {
+      "path": "pages/menu/menu",
+      "style": {
+        "navigationBarTitleText": "点单"
+      }
+    },
+    {
+      "path": "pages/review/review",
+      "style": {
+        "navigationBarTitleText": "评论",
+        "navigationBarTextStyle": "black",
+        "navigationBarBackgroundColor": "#ffffff"
+      }
+    }
+  ],
+  "globalStyle": {
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "",
+    "navigationBarBackgroundColor": "#F8F8F8",
+    "backgroundColor": "#F8F8F8"
+  },
+  "tabBar": {
+    "color": "#333",
+    "selectedColor": "#27ba9b",
+    "backgroundColor": "#fff",
+    "borderStyle": "white",
+    "list": [
+      {
+        "text": "首页",
+        "pagePath": "pages/index/index",
+        "iconPath": "static/tabBar/home_default.png",
+        "selectedIconPath": "static/tabBar/home_selected.png"
+      },
+      {
+        "text": "点单",
+        "pagePath": "pages/menu/menu",
+        "iconPath": "static/tabBar/menu_default.png",
+        "selectedIconPath": "static/tabBar/menu_selected.png"
+      },
+      {
+        "text": "订单",
+        "pagePath": "pages/index/order",
+        "iconPath": "static/tabBar/order_default.png",
+        "selectedIconPath": "static/tabBar/order_selected.png"
+      },
+      {
+        "text": "我的",
+        "pagePath": "pages/index/mine",
+        "iconPath": "static/tabBar/mine_default.png",
+        "selectedIconPath": "static/tabBar/mine_selected.png"
+      }
+    ]
+  },
+  //分包路径
+  "subPackages": [
+    {
+      "root": "pages/order",
+      "pages": [
+        {
+          "path": "confirm",
+          "style": {
+            "navigationBarTitleText": "订单确认",
+            "componentPlaceholder": { "coupon-popup": "view" }
+          },
+          "meta": {
+            "auth": true
+          }
+        },
+        {
+          "path": "detail",
+          "style": {
+            "navigationBarTitleText": "订单详情",
+            "navigationBarTextStyle": "black",
+            "navigationBarBackgroundColor": "#ffffff"
+          }
+        },
+        {
+          "path": "vouchers-code",
+          "style": {
+            "navigationBarTitleText": "订单核销",
+            "navigationBarTextStyle": "black"
+          }
+        }
+      ]
+    },
+    {
+      "root": "pages/store",
+      "pages": [
+        {
+          "path": "list",
+          "style": {
+            "navigationBarTitleText": "选择门店"
+          }
+        }
+      ]
+    },
+    {
+      "root": "pages/coupon",
+      "pages": [
+        {
+          "path": "list",
+          "style": {
+            "navigationBarTitleText": "优惠券"
+          },
+          "meta": {
+            "auth": true
+          }
+        }
+      ]
+    },
+    {
+      "root": "pages/member",
+      "pages": [
+        {
+          "path": "member-code",
+          "style": {
+            "navigationBarTitleText": "会员码"
+          },
+          "meta": {
+            "auth": true
+          }
+        },
+        {
+          "path": "settings",
+          "style": {
+            "navigationBarTitleText": "设置"
+          },
+          "meta": {
+            "auth": true
+          }
+        }
+      ]
+    },
+    {
+      "root": "pages/error",
+      "pages": [
+        {
+          "path": "network",
+          "style": {
+            "navigationStyle": "custom",
+            "navigationBarTitleText": "network"
+          }
+        }
+      ]
+    },
+    {
+      "root": "pages/pay",
+      "pages": [
+        {
+          "path": "pay-result",
+          "style": {
+            "navigationBarTitleText": "支付结果"
+          }
+        }
+      ]
+    }
+  ]
+}
